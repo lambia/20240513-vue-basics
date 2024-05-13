@@ -6,20 +6,35 @@ createApp({
 
     data() {
         return {
-            title: 'VueJS Basics',
-            percorsoImg: "./img/finestra.jpg"
+            percorsoImg: "./img/1.jpeg",
+            names: [
+                'Michele',
+                'Fabio',
+                'Roberto'
+            ],
+            vueIsAwesome: false
         }
     },
     methods: {
-        cambiaTitolo() {
-            this.title = "Nuovo titolo";
+        changeVueAwesomeness() {
+            // if (this.vueIsAwesome == false) {
+            //     this.vueIsAwesome = true;
+            // } else {
+            //     this.vueIsAwesome = false;
+            // }
+            this.vueIsAwesome = !this.vueIsAwesome;
         },
         cambiaPercorso() {
-            this.percorsoImg = "./img/r8.jpg";
-        }
+            if (this.percorsoImg == "./img/1.jpeg") {
+                this.percorsoImg = "./img/2.webp";
+            } else {
+                this.percorsoImg = "./img/1.jpeg"
+            }
+        },
     },
     mounted() {
         console.log("Applicazione Vue montata correttamente");
+        console.log("Nomi: ", this.names);
         // this.title = "Applicazione caricata";
         // this.cambiaTitolo();
     }

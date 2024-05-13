@@ -12,8 +12,18 @@
 <body>
 
     <div id="app">
-        <h1 @click="cambiaTitolo">{{ title }}</h1>
-        <img @click="cambiaPercorso" :src="percorsoImg" alt="">
+        <h1 v-if="vueIsAwesome">Vue è fantastico!</h1>
+        <h1 v-else>Vue è orribile!</h1>
+
+        <button @click="changeVueAwesomeness">Attualmente: {{ vueIsAwesome }}</button>
+
+        <ul>
+            <li v-for="nome, i in names">{{ i }} si chiama {{ nome }}</li>
+        </ul>
+
+        <div class="slide">
+            <img @click="cambiaPercorso" :src="percorsoImg" alt="">
+        </div>
     </div>
 
     <script src="./js/main.js"></script>
